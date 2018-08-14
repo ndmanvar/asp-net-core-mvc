@@ -34,6 +34,8 @@ namespace Sentry.Samples.AspNetCore.Mvc.Controllers
                 {
                     _logger.LogWarning("Param is null!", @params);
                 }
+
+                await _gameService.FetchNextPhaseDataAsync();
             }
             catch (Exception e)
             {
