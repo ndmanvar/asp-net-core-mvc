@@ -54,6 +54,17 @@ namespace Sentry.Samples.AspNetCore.Mvc.Controllers
             }
         }
 
+        // Example: An exception that goes unhandled by the app will be captured by Sentry:
+        [HttpPost]
+        public async Task PostIndexUnhandled(string @params)
+        {
+            if (@params == null)
+            {
+                _logger.LogWarning("Param is null!", @params);
+            }
+            await _gameService.FetchNextPhaseDataAsync();
+        }
+
         // Example: The view rendering throws: see about.cshtml
         public IActionResult About()
         {
