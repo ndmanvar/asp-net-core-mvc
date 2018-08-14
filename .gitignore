@@ -1,1 +1,13 @@
-bin
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+.vs/
+*.userprefs
+*.user
+bin/
+obj/
+.DS_Store
+**/packages
