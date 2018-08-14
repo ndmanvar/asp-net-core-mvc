@@ -6,7 +6,7 @@ SENTRY_ORG=testorg-az
 SENTRY_PROJECT=asp-net-core-mvc
 VERSION=`sentry-cli releases propose-version`
 
-setup_release: create_release associate_commits reference_release
+setup_release: reference_release create_release associate_commits
 
 create_release:
 	sentry-cli releases -o $(SENTRY_ORG) new -p $(SENTRY_PROJECT) $(VERSION)
