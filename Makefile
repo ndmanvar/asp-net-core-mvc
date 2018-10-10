@@ -15,4 +15,4 @@ associate_commits:
 	sentry-cli releases -o $(SENTRY_ORG) -p $(SENTRY_PROJECT) set-commits --auto $(VERSION)
 
 reference_release:
-	sed -i -e "s/i.Release = .*;/\i.Release = \"${VERSION}\";/g" Program.cs
+	sed -i -e "s/i.Release = .*;/\o.Release = \"${VERSION}\";/g" Program.cs

@@ -11,3 +11,4 @@ bin/
 obj/
 .DS_Store
 **/packages
+*.sln
