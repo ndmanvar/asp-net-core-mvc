@@ -16,8 +16,8 @@ namespace Sentry.Samples.AspNetCore.Mvc
         {
             _gameLogger.LogInformation("Fetching dungeons and mana level in parallel.");
 
-            var getDungeonsTask = Task.Run(new Func<int>(() => 1));
-            var getUserMana = Task.Run(new Func<int>(() => 2));
+            var getDungeonsTask = Task.Run(new Func<int>(() => throw new HttpRequestException("Failed to fetch available Dungeons")));
+            var getUserMana = Task.Run(new Func<int>(() => throw new DataException("Invalid Mana level: -10")));
 
             var whenAll = Task.WhenAll(getDungeonsTask, getUserMana);
             try
